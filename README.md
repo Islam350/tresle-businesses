@@ -114,6 +114,14 @@ Parameters`
 <small>{{PostID}} => ID of post </small><br>
 <small>{{PageNo}} => Page number for pagination </small>
 
+## **Docker**
+<p>After installing Docker in your machine, Open terminal inside project directory and run the following command:</p>
+
+&dollar; `docker-compose up` <br>
+<p>After container start, run the following command to migrate and seed database tables</p>
+
+&dollar; `docker-compose exec myapp php artisan migrate:fresh --seed`
+
 ## License
 
 Open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
