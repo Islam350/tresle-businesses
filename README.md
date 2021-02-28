@@ -15,7 +15,7 @@ A small backend application using Laravel. The application stores and manage bus
 ## API endpoints
 
 Description of application endpoints, For better representation you can use on of the following methods:
-- **[Postman documentations](https://documenter.getpostman.com/view/9092339/TWDdiDYM)**
+- **[Postman documentation](https://documenter.getpostman.com/view/9092339/TWDdiDYM)**
 - **[Postman collection file](https://raw.githubusercontent.com/Islam350/tresle-businesses/master/Tresle%20Businesses.postman_collection.json)**
 
 ### Businesses
@@ -27,7 +27,7 @@ GET `{{Domain}}/api/businesses`
 
 Parameters`
 [
-    'page'  =>  1
+    'page'  =>  {{PageNo}}
 ]
 `
 
@@ -79,7 +79,7 @@ GET `{{Domain}}/api/countries`
 
 Parameters`
 [
-'page'  =>  1
+'page'  =>  {{PageNo}}
 ]
 `
 
@@ -92,7 +92,7 @@ GET `{{Domain}}/api/regions`
 
 Parameters`
 [
-'page'  =>  1
+'page'  =>  {{PageNo}}
 ]
 `
 
@@ -105,13 +105,14 @@ GET `{{Domain}}/api/cities`
 
 Parameters`
 [
-'page'  =>  1
+'page'  =>  {{PageNo}}
 ]
 `
 
 ### **Key map**
 <small>{{Domain}} => Base url of your application</small><br>
-<small>{{PostID}} => ID of post </small>
+<small>{{PostID}} => ID of post </small><br>
+<small>{{PageNo}} => Page number for pagination </small>
 
 ## License
 
