@@ -4,7 +4,7 @@
 Businesses Task
 </p>
 
-## About Laravel
+## About
 
 A small backend application using Laravel. The application stores and manage businesses.
 
@@ -121,7 +121,10 @@ Parameters`
 <p>After container start, run the following command to migrate and seed database tables</p>
 
 &dollar; `docker-compose exec myapp php artisan migrate:fresh --seed`
+<p>Then you can access endpoints using the base url
 
+`http://localhost:3000`
+</p>
 ## License
 
 Open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
