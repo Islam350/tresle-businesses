@@ -1,62 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://tresle.com" target="_blank"><img src="https://tresle.com/img/tresle_logo_footer.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+Businesses Task
 </p>
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A small backend application using Laravel. The application stores and manage businesses.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Database structure
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<img src="https://raw.githubusercontent.com/Islam350/tresle-businesses/master/DBD.png">
 
-## Learning Laravel
+## API endpoints
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Description of application endpoints, For better representation you can use on of the following methods:
+- **[Postman documentations](https://documenter.getpostman.com/view/9092339/TWDdiDYM)**
+- **[Postman collection file](https://raw.githubusercontent.com/Islam350/tresle-businesses/master/Tresle%20Businesses.postman_collection.json)**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Businesses
 
-## Laravel Sponsors
+#### get-businesses
+Which returns the latest businesses with pagination:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+GET `{{Domain}}/api/businesses`
 
-### Premium Partners
+Parameters`
+[
+    'page'  =>  1
+]
+`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+#### store-businesses
+Which accepts the required fields including a city and creates a new business:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+POST `{{Domain}}/api/businesses`
 
-## Code of Conduct
+Parameters`
+[
+'name'      =>  'Name of business',
+'price'     =>  10000
+'city_id'   =>  1
+]
+`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+#### get-business
+Which returns a business:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+GET `{{Domain}}/api/businesses/{{PostID}}`
+
+#### update-businesses
+Which updates an existing business and/or its city:
+
+PUT `{{Domain}}/api/businesses/{{PostID}}`
+
+Parameters`
+[
+'name'      =>  'New name of the business',
+'price'     =>  20000
+'city_id'   =>  2
+]
+`
+
+#### delete-businesses
+Which deletes an existing business:
+
+DELETE `{{Domain}}/api/businesses/{{PostID}}`
+
+
+### Countries
+
+#### get-countries
+Which returns all countries with pagination:
+
+GET `{{Domain}}/api/countries`
+
+Parameters`
+[
+'page'  =>  1
+]
+`
+
+### Regions
+
+#### get-regions
+Which returns all regions with pagination:
+
+GET `{{Domain}}/api/regions`
+
+Parameters`
+[
+'page'  =>  1
+]
+`
+
+### Cities
+
+#### get-cities
+Which returns all cities with pagination:
+
+GET `{{Domain}}/api/cities`
+
+Parameters`
+[
+'page'  =>  1
+]
+`
+
+### **Key map**
+<small>{{Domain}} => Base url of your application</small><br>
+<small>{{PostID}} => ID of post </small>
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
